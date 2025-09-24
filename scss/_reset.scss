@@ -1,0 +1,16 @@
+@use 'colours' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: c(color-bg);
+    color: c(color-text);
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+}

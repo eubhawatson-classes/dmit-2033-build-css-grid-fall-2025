@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 
 Q: Why does this module exist? 
@@ -10,6 +9,28 @@ Our fix is to emit CSS custom properties (the --thing: value; variables browsers
 Instead of sprinkling brand shades like $teal-700 everywhere, we use semantic names like color-text, color-bg, color-accent. These names describe purpose, not pigment. In light mode and dark mode, the names stay identical, but their values differ. That’s the trick that makes a single codebase themeable.
 
 */
+
+// We'll start by creating two small maps (which are basically dictionaries or associative arrays).
+$light: (
+    color-bg:           #eceff1,
+    color-text:         #323232,
+    color-muted:        #4b5563,
+    color-border:       #cfd8dc,
+    color-btn:          #262626,
+    color-accent:       #00796b,
+    color-accent-strong:#134e4a
+);
+
+$dark: (
+    color-bg:           #292f35,
+    color-text:         #eceff1,
+    color-muted:        #cfd8dc,
+    color-border:       #171717,
+    color-btn:          #111,
+    color-accent:       #26a69a,
+    color-accent-strong:#00796b
+);
+
 /*
 
 Below is a tiny helper function. It let us write: 
@@ -23,6 +44,9 @@ instead of the longer vanilla CSS version:
 It's purely for convenience and to save us some typing later on.
 
 */
+
+@function c($name) { @return var(--#{$name}); }
+
 /*
 
 @each is our Sass "foreach" loop. For each key ($key) and value ($value) in the map we created up above, it outputs a line like: 
@@ -32,38 +56,11 @@ It's purely for convenience and to save us some typing later on.
 First, we loop through all of our default (light mode) variables; next, we create an @media rule for dark mode, then loop through and generate all of the dark mode colours.
 
 */
+
 :root {
-  --color-bg: #eceff1;
-  --color-text: #323232;
-  --color-muted: #4b5563;
-  --color-border: #cfd8dc;
-  --color-btn: #262626;
-  --color-accent: #00796b;
-  --color-accent-strong: #134e4a;
+    @each $key, $value in $light { --#{$key}: #{$value}; } 
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #292f35;
-    --color-text: #eceff1;
-    --color-muted: #cfd8dc;
-    --color-border: #171717;
-    --color-btn: #111;
-    --color-accent: #26a69a;
-    --color-accent-strong: #00796b;
-  }
+    :root { @each $key, $value in $dark { --#{$key}: #{$value}; }  }
 }
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 1.125rem;
-  line-height: 1.5;
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-}/*# sourceMappingURL=styles.css.map */
