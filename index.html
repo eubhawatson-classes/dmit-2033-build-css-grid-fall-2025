@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Additional Information -->
-    <meta name="description"
-        content="This multi-day build covers how to use CSS Grid with CSS Flexbox to create a fully-responsive intrinsic layout.">
+    <meta name="description" content="This multi-day build covers how to use CSS Grid with CSS Flexbox to create a fully-responsive intrinsic layout.">
 
     <title>Magazine (CSS Grid Build)</title>
 
@@ -28,9 +27,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/reset.css">
@@ -41,7 +38,158 @@
 </head>
 
 <body>
+    <header>
+        <div class="inner-container">
+            <h1><a href="index.html">Magazine</a></h1>
 
+            <button aria-expanded="false" aria-controls="navbar" class="btn">
+                <svg viewbox="0 0 100 80" width="40" height="40">
+                    <rect width="100" height="20"></rect>
+                    <rect width="100" height="20" y="30"></rect>
+                    <rect width="100" height="20" y="60"></rect>
+                </svg>
+                menu
+            </button>
+
+            <nav id="navbar" class="top-nav">
+                <ul class="menu-links">
+                    <!-- We're using on-page anchors here, which means we're linking to different parts of the page with the IDs specified in our href values. -->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#recent-posts">Recent</a></li>
+                    <li><a href="#popular-posts">Popular</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <section id="recent-posts" class="recent-posts">
+                <h2>Recent Posts</h2>
+
+                <!-- article*5>img+h3+p+a[href="#"].article-link -->
+
+                <article>
+                    <img src="img/healthy-breakfast-pots.webp" alt="A masor jar filled with fruit and oats.">
+                    <h3>Sept 14, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et officia pariatur consequatur voluptatem fugiat ex ipsum excepturi dolore, vel esse praesentium cumque, cum quia cupiditate, suscipit vero earum veniam tempora.</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+                <article>
+                    <img src="img/holding-coffee-in-bed.webp" alt="A person holding a cup of coffee in bed.">
+                    <h3>August 31, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, eum quia ut aliquid ad cumque quos magni placeat impedit eligendi beatae velit, laudantium aliquam ratione! Error modi dolorum perspiciatis doloribus.</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+                <article>
+                    <img src="img/legs-running-on-track.webp" alt="A person in compression tights, running on an outdoor track.">
+                    <h3>August 17, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita fuga quaerat doloribus dolore odio quo atque laboriosam architecto eaque velit voluptate beatae explicabo tenetur, obcaecati facilis, nemo facere a repudiandae!</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+                <article>
+                    <img src="img/writing-down-goals.webp" alt="A top-down view of a person writing down their goals in a bullet journal.">
+                    <h3>July 20, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti asperiores temporibus eius perspiciatis fugiat iusto omnis, fugit exercitationem magnam, dignissimos aut cupiditate maxime molestiae nemo laudantium minus doloremque minima vel!</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+                <article>
+                    <img src="img/healthy-salad.webp" alt="A healthy garden salad, served alongside caprese and soup.">
+                    <h3>July 17, 2025</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nesciunt, facere ratione incidunt fugit aspernatur similique officiis aperiam expedita quis eum nihil obcaecati omnis alias magni laudantium perferendis aut voluptates!</p>
+                    <a href="#" class="article-link">Read More</a>
+                </article>
+            </section>
+            <section id="popular-posts" class="popular-posts">
+                <h2>Popular Posts</h2>
+
+                <!-- article*5>img+div>h3+p+a[href="#"].btn -->
+
+                <article>
+                    <img src="img/vrkasana-yoga.webp" alt="A person in athletic wear, doing a yoga routine on a rooftop.">
+                    <div>
+                        <h3>Benefits of Yoga</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, nisi, eum voluptatibus aperiam nulla doloribus blanditiis eius numquam omnis placeat earum rerum ipsam sed natus facere modi odio! Eum, aspernatur?</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="img/abstract.webp" alt="Pink and orange abstract colours.">
+                    <div>
+                        <h3>Meditation for the Mind</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat explicabo mollitia incidunt, possimus et magnam, aspernatur consequatur iste quam earum ea! Consequuntur ipsam consequatur quo aperiam iure! Est, magni optio?</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="img/beach-at-sunrise.webp" alt="Sunrise over the ocean, taken from the top of a pier.">
+                    <div>
+                        <h3>Location, Location, Location</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nisi, quia nulla nemo atque corrupti, praesentium quo illum exercitationem harum dolor sequi? Possimus explicabo quas dolore quod cupiditate? Distinctio, officia.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="img/cat-photo.webp" alt="A super close-up photo of a cat's face.">
+                    <div>
+                        <h3>Family Pets</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, sint a architecto voluptas quis, nulla voluptate voluptates expedita suscipit id odio est aspernatur libero quam officia, sed corrupti reprehenderit porro.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </article>
+                <article>
+                    <img src="img/beach-wind.webp" alt="Person at the beach on a windy day.">
+                    <div>
+                        <h3>Taking Breaks</h3>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus aliquid possimus molestias mollitia doloremque! Laborum ullam eos incidunt laudantium quas suscipit excepturi, eum ipsum. Quae nobis autem minus quaerat animi.</p>
+                        <a href="#" class="btn">Read More</a>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="inner-container">
+            <div class="col">
+                <h2>Magazine</h2>
+            </div>
+            <div class="col">
+                <h2>Navigation</h2>
+
+                <nav>
+                    <ul class="site-map">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#recent-posts">Recent</a></li>
+                        <li><a href="#popular-posts">Popular</a></li>
+                        <li><a href="#footer">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col">
+                <h2>Categories</h2>
+
+                <nav>
+                    <ul class="categories">
+                        <li><a href="search.html?q=meals">Meals</a></li>
+                        <li><a href="search.html?q=exercise">Exercise</a></li>
+                        <li><a href="search.html?q=mind">Mind</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col">
+                <h2>Newsletter</h2>
+
+                <form action="index.html" method="POST">
+                    <!-- Text Field -->
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="hello@email.com" required>
+                    <!-- Submit -->
+                     <input type="submit" name="submit" id="submit" value="Sign Up">
+                </form>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
