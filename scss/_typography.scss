@@ -1,0 +1,67 @@
+@use 'colours' as *;
+@use 'sizing';
+
+// Variables (font sizes & line-heights)
+$text-xl-size: 2.25rem;
+$text-xl-line: 2.5rem;
+
+$text-lg-size: 1.875rem;
+$text-lg-line: 2.235rem;
+
+$text-md-size: 1.25rem;
+$text-md-line: 1.75rem;
+
+$text-sm-size: 1.125rem;
+$text-sm-line: 1.75rem;
+
+// Headings & Text
+h1 {
+    font-size: $text-xl-size;
+    line-height: $text-xl-line;
+}
+
+h2 {
+    font-size: $text-lg-size;
+    line-height: $text-lg-line;
+}
+
+h3 {
+    font-size: $text-md-size;
+    line-height: $text-md-line;
+    margin-bottom: sizing.$baseline;
+}
+
+p {
+    font-size: $text-sm-size;
+    line-height: $text-sm-line;
+    margin-bottom: sizing.$baseline;
+}
+
+a {
+    color: c(color-accent);
+    text-decoration: none;
+    transition: all 0.4s ease;
+
+    &:hover { color: c(color-accent-strong); }
+
+    &.article-link,
+    &.btn { 
+        display: inline-block;
+        margin-bottom: calc(2 * sizing.$baseline);
+     }
+
+    &.article-link {
+        text-decoration: underline;
+    }
+
+    &.btn {
+        background-color: c(color-btn);
+        border-radius: 0.25rem;
+        color: white;
+        padding: calc(0.5 * sizing.$baseline) sizing.$baseline;
+
+        &:hover {
+            background-color: black;
+        }
+    }
+} // end of a

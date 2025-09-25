@@ -14,3 +14,27 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
 }
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+}
+
+article > * + * {
+    margin-top: 1em;
+}

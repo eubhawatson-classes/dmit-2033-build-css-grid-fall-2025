@@ -66,4 +66,146 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+.inner-container,
+.grid-container {
+  margin: 0 auto;
+  max-width: 1600px;
+}
+
+header,
+footer {
+  padding: 1rem;
+}
+
+main {
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  line-height: 2.235rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.6875rem;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-bottom: 1.6875rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+a:hover {
+  color: var(--color-accent-strong);
+}
+a.article-link, a.btn {
+  display: inline-block;
+  margin-bottom: 3.375rem;
+}
+a.article-link {
+  text-decoration: underline;
+}
+a.btn {
+  background-color: var(--color-btn);
+  border-radius: 0.25rem;
+  color: white;
+  padding: 0.84375rem 1.6875rem;
+}
+a.btn:hover {
+  background-color: black;
+}
+
+header {
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 0 8px var(--color-border);
+}
+header .inner-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+header .btn {
+  background-color: var(--color-bg);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.75rem;
+  text-align: center;
+}
+header .btn svg {
+  display: block;
+}
+header nav {
+  flex: 0 0 100%;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height ease-in-out 1s;
+}
+header nav.show {
+  max-height: 275px;
+}
+header nav .menu-links li {
+  line-height: 3.5rem;
+  margin-bottom: 0.75rem;
+}
+header nav .menu-links li a {
+  display: block;
+  padding-left: 0.75rem;
+}
+
+@media screen and (min-width: 600px) {
+  header .btn {
+    display: none;
+  }
+  header nav {
+    flex: 0 1 auto;
+    max-height: unset;
+  }
+  header nav .menu-links {
+    display: flex;
+    gap: 1.6875rem;
+  }
+  header nav .menu-links li {
+    margin-bottom: 0;
+  }
 }/*# sourceMappingURL=styles.css.map */
