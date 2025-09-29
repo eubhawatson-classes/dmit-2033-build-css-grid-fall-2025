@@ -208,4 +208,113 @@ header nav .menu-links li a {
   header nav .menu-links li {
     margin-bottom: 0;
   }
+}
+.grid-container,
+section {
+  display: grid;
+  gap: 1.6875rem;
+}
+
+.grid-container {
+  margin: 0 auto;
+  container-type: inline-size;
+  container-name: grid;
+}
+
+section {
+  margin-bottom: 3.375rem;
+}
+
+.popular-posts article {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+.popular-posts article div {
+  padding: 1.6875rem 1.6875rem 0 1.6875rem;
+}
+
+@container grid (min-width: 740px) {
+  .grid-container {
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .recent-posts,
+  .popular-posts {
+    grid-template-rows: min-content;
+  }
+  .recent-posts {
+    grid-column: 1/span 6;
+  }
+  .recent-posts article {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .popular-posts {
+    grid-column: 7/span 6;
+  }
+}
+@container grid (min-width: 992px) {
+  .recent-posts {
+    grid-column: 1/span 8;
+  }
+  .popular-posts {
+    grid-column: 9/span 4;
+  }
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+}
+form input {
+  border: 1px solid var(--color-accent);
+  border-radius: 4px;
+  line-height: 2.5rem;
+  padding-left: 0.75rem;
+  width: 100%;
+}
+form input:not([name=submit]) {
+  border-radius: 4px 0 0 4px;
+  flex: 1 0 3rem;
+}
+form input[name=submit] {
+  background-color: var(--color-accent);
+  border-radius: 0 4px 4px 0;
+  color: white;
+  cursor: pointer;
+  flex: 0 1 3rem;
+  padding: 0 0.84375rem;
+  transition: background-color 0.3s ease;
+}
+form input[name=submit]:hover {
+  background-color: var(--color-accent-strong);
+}
+form label {
+  color: var(--color-muted);
+  font-weight: 300;
+  margin-bottom: 0.84375rem;
+  width: 100%;
+}
+
+footer {
+  border-top: 1px solid var(--color-border);
+  padding: 3rem 1rem;
+}
+footer .inner-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6875rem;
+  justify-content: space-between;
+}
+footer .col {
+  flex: 1;
+}
+footer .col:first-of-type, footer .col:last-of-type {
+  flex: 1 1 100%;
+}
+footer .col:not(:first-of-type) h2 {
+  font-size: 1.25rem;
+}
+
+@media screen and (min-width: 740px) {
+  footer .col:last-of-type {
+    flex: 1;
+  }
 }/*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,33 @@
+@use 'colours' as *;
+@use 'sizing' as *;
+
+footer {
+    border-top: 1px solid c(color-border);
+    padding: 3rem 1rem;
+
+    .inner-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $baseline;
+        justify-content: space-between;
+    }
+
+    .col {
+        flex: 1;
+
+        &:first-of-type,
+        &:last-of-type {
+            flex: 1 1 100%;
+        }
+
+        &:not(:first-of-type) h2 {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+@media screen and (min-width: $sm) {
+    footer .col:last-of-type {
+        flex: 1;
+    }
+}

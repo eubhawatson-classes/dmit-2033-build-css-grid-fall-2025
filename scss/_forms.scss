@@ -1,0 +1,41 @@
+@use 'colours' as *;
+@use 'sizing' as *;
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+
+    input {
+        border: 1px solid c(color-accent);
+        border-radius: 4px;
+        line-height: 2.5rem;
+        padding-left: 0.75rem;
+        width: 100%;
+
+        &:not([name="submit"]) {
+            border-radius: 4px 0 0 4px;
+            flex: 1 0 3rem;
+        }
+
+        &[name="submit"] {
+            background-color: c(color-accent);
+            border-radius: 0 4px 4px 0;
+            color: white;
+            cursor: pointer;
+            flex: 0 1 3rem;
+            padding: 0 calc(0.5 * $baseline);
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: c(color-accent-strong);
+            }
+        }
+    }
+
+    label {
+        color: c(color-muted);
+        font-weight: 300;
+        margin-bottom: calc(0.5 * $baseline);
+        width: 100%;
+    }
+}
